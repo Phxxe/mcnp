@@ -1,0 +1,28 @@
+HEU Sphere
+C     Cell Cards
+1 1 -18.74 -1 imp:n=1
+2 2 0.091 1 -2 imp:n=1
+3 0 2 imp:n=0
+
+C     Surface Cards
+1 SO 8.74 $ cm
+2 SO 9.74 $ cm
+
+C     Data Cards
+C     Material Data Cards $ - means wt% and + at%
+M1   92235.80c -0.9371 $ HEU density=18.74 g/ccm
+     92238.80c -0.0629 
+M2   28058.80c  -0.681 $ Ni 0.091 atom/(barn-cm)    
+     28060.80c  -0.262
+     28061.80c  -0.0114
+     28062.80c  -0.0363
+     28064.80c  -0.00922
+C Criticality Control Cards
+kcode 2e3 1.0 20 100 $ hist/gen; keff guess; skip 20 gen, total 100 gen
+C Uniform intial source
+SDEF  ERG=D1 POS=0 0 0  RAD=d2  CEL=1   $ volumetric generation over cell 1
+SP1   -3 0.988 2.249   $ fission spectrum for U235 thermal
+SI2   0  18.74         $ radius 0 to max
+SP2   -21  2           $ random dist power rule of 2 4pir^2
+C print all tables
+print
