@@ -13,7 +13,7 @@ C Criticality Control Cards
 kcode 4.955e5 1.0 20 100 $ hist/gen; keff guess; skip 20 gen, total 200 gen
 C Uniform intial source
 SDEF  ERG=D1 POS=0 0 0  RAD=d2  CEL=1
-SP1   -3
+SP1   -3 0.988 2.249 $ fission spectrum for U235 thermal
 SI2   0  18.74
 SP2   -21  2
 C print all tables
