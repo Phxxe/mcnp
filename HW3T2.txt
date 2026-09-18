@@ -7,6 +7,14 @@ C     Cell Cards
 C     Surface Cards
 1 SO 8.74 $ cm
 2 SO 9.74 $ cm
+3 SO 1
+4 SO 2
+5 SO 3
+6 SO 4
+7 SO 5
+8 SO 6
+9 SO 7
+10 SO 8
 
 C     Data Cards
 C     Material Data Cards $ - means wt% and + at%
@@ -24,5 +32,6 @@ SDEF  ERG=D1 POS=0 0 0  RAD=d2  CEL=1   $ volumetric generation over cell 1
 SP1   -3 0.988 2.249   $ fission spectrum for U235 thermal
 SI2   0  18.74         $ radius 0 to max
 SP2   -21  2           $ random dist power rule of 2 4pir^2
+F2:n 3 4 5 6 7 8 9 10 1
 C print all tables
 print
