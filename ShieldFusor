@@ -15,14 +15,14 @@ C     Cell Cards
 C     Surface Cards
 1 SO 15.24 $ cm
 2 SO 15.74 $ cm
-3 SO 100
-4 SO 200
-5 SO 300
-6 SO 400
+3 SO 30
+4 SO 50
+5 SO 100
+6 SO 200
 7 SO 500
 8 SO 600
 9 SO 700
-10 SO 800
+10 SO 1000
 
 C     Data Cards
 C     Material Data Cards $ - means wt% and + at%
