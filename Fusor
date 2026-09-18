@@ -32,9 +32,9 @@ m2   6012.50c  -0.000124   $ C-12  desnity -0.0012049
      8016.80c  -0.231781   $ O-16
     18040.70c  -0.012827   $ Ar-40
 C Point Source
-SDEF   PAR=1   POS=0 0 0   ERG=2.45 $ neutron 2.45 Mev DD neutron
+SDEF   PAR=1 Cel=1  POS=0 0 0   ERG=2.45 $ neutron 2.45 Mev DD neutron
 C Tally
-F2:n 1 2 3 4 5 6 7 8 9 10
+F2:N 1 2 3 4 5 6 7 8 9 10
 NPS 1e6
 C print all tables
 print
