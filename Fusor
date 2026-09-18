@@ -27,10 +27,10 @@ C     Surface Cards
 C     Data Cards
 C     Material Data Cards $ - means wt% and + at%
 m1   1002.   1
-m2   6012.  -0.000124   $ C-12  desnity -0.0012049
-     7014.  -0.755268   $ N-14
-     8016.  -0.231781   $ O-16
-    18040.  -0.012827   $ Ar-40
+m2   6012.  -0.000124.80c   $ C-12  desnity -0.0012049
+     7014.  -0.755268.80c   $ N-14
+     8016.  -0.231781.80c   $ O-16
+    18040.  -0.012827.80c   $ Ar-40
 C Point Source
 SDEF   PAR=1   POS=0 0 0   ERG=2.45 $ neutron 2.45 Mev DD neutron
 C Tally
