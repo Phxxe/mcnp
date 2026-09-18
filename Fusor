@@ -37,6 +37,6 @@ C Point Source
 SDEF   PAR=1 Cel=1  POS=0 0 0   ERG=2.45 $ neutron 2.45 Mev DD neutron
 C Tally
 F2:N 1 2 3 4 5 6 7 8 9 10
-NPS 1e9
+NPS 1e7
 C print all tables
 print
