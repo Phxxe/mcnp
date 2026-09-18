@@ -1,0 +1,56 @@
+Fusor Simulation with shielding material
+C     Cell Cards
+1  1 -0.0012049  -1        imp:n=1
+2  2 -2.23   1 -2     imp:n=1
+3  1 -0.0012049   2 -3     imp:n=1
+4  1 -0.0012049   3 -4     imp:n=1
+5  1 -0.0012049   4 -5     imp:n=1
+6  1 -0.0012049   5 -6     imp:n=1
+7  1 -0.0012049   6 -7     imp:n=1
+8  1 -0.0012049   7 -8     imp:n=1
+9  1 -0.0012049   8 -9     imp:n=1
+10 1 -0.0012049   9 -10    imp:n=1
+11 0              10       imp:n=0
+
+C     Surface Cards
+1 SO 15.24 $ cm
+2 SO 30 $ cm
+3 SO 100
+4 SO 200
+5 SO 300
+6 SO 400
+7 SO 500
+8 SO 600
+9 SO 700
+10 SO 800
+
+C     Data Cards
+C     Material Data Cards $ - means wt% and + at%
+C     Air
+m1   6012.50c  -0.000124   $ C-12  desnity -0.0012049
+     7014.80c  -0.755268   $ N-14
+     8016.80c  -0.231781   $ O-16
+     18040.80c -0.012827   $ Ar-40
+c ---------------------------------------------------------------
+c  M-card: Borosilicate glass (Pyrex, Corning 7740)
+c  rho = 2.23 g/cm3   (Iwt = mass fractions, per NIST/PNNL data)
+c ---------------------------------------------------------------
+M2   5010.80c  -0.007384   $ B-10  (natural B split, 19.9 at%)
+      5011.80c  -0.032680   $ B-11  (natural B split, 80.1 at%)
+      8016.80c  -0.539562   $ O-16  (~= natural O)
+     11023.80c  -0.028191   $ Na-23 (natural, 100%)
+     13027.80c  -0.011644   $ Al-27 (natural, 100%)
+     14028.80c  -0.346565   $ Si-28
+     14029.80c  -0.018228   $ Si-29
+     14030.80c  -0.012434   $ Si-30
+     19039.80c  -0.003087   $ K-39
+     19041.80c  -0.000234   $ K-41 (K-40 omitted, ~4e-7 wt fr., negligible)
+c
+c cell card usage:  ... M10 -2.23  imp:n,p 1   $ rho in g/cm3 (negative)
+C Point Source
+SDEF   PAR=1 Cel=1  POS=0 0 0   ERG=2.45 $ neutron 2.45 Mev DD neutron
+C Tally
+F2:N 1 2 3 4 5 6 7 8 9 10
+NPS 1e8
+C print all tables
+print
