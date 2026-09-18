@@ -1,4 +1,4 @@
-Fusor Simulation No attenuation in the vaccuum
+Fusor Simulation at scaling from at the Fusor wall to 8 meters away with 0 attenuation.
 C     Cell Cards
 1  0 -1.7976e-4  -1        imp:n=1
 2  2 -0.0012049   1 -2     imp:n=1
@@ -23,7 +23,6 @@ C     Surface Cards
 8 SO 600
 9 SO 700
 10 SO 800
-
 
 C     Data Cards
 C     Material Data Cards $ - means wt% and + at%
