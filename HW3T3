@@ -12,8 +12,8 @@ C     Data Cards
 C     Material Data Cards
 C     ********************************
 C     HEU 93.371 % density=18.74 g/ccm
-M1 92235.80c -0.9371 
-   92238.80c -0.0629
+M1   92235.80c -0.9371 
+     92238.80c -0.0629
 C     ********************************
 C     Natural Nickel 0.091 atom/(barn-cm) from NIST.gov
 M2   28058.80c  -0.68077   
