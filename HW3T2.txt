@@ -26,8 +26,8 @@ C     Data Cards
 C     Material Data Cards
 C     ********************************
 C     HEU 93.371% density=18.74 g/ccm
-M1 92235.80c -0.9371 
-   92238.80c -0.0629
+M1   92235.80c -0.9371 
+     92238.80c -0.0629
 C     ********************************
 C Criticality Control Cards
 kcode 2e3 1.0 20 100 $ hist/gen; keff guess; skip 20 gen, total 100 gen
