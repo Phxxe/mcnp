@@ -34,7 +34,7 @@ kcode 4.51250e6 1.0 20 100 $ hist/gen; keff guess; skip 20 gen, total 100 gen
 C Uniform intial source
 SDEF  ERG=D1 POS=0 0 0  RAD=d2  CEL=9   $ volumetric generation
 SP1   -3 0.988 2.249   $ fission spectrum for U235 thermal
-SI2   0  18.74         $ radius 0 to max
+SI2   0  8.74         $ radius 0 to max
 SP2   -21  2           $ random dist power rule of 2 4pir^2
 F2:n 1 2 3 4 5 6 7 8 9
 C print all tables
