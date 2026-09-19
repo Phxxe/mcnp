@@ -9,7 +9,7 @@ C     Cell Cards
 7 1 -18.74 6 -7 imp:n=1
 8 1 -18.74 7 -8 imp:n=1
 9 1 -18.74 8 -9 imp:n=1
-10 0 2 imp:n=0
+10 0 9 imp:n=0
 
 C     Surface Cards
 1 SO 1
