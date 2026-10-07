@@ -1,10 +1,10 @@
 Task 2 Hot Operating Temp Pincell Simulation
 C     Cell Cards
-1 1 -10.5216 -1 9 -10 imp:n=1
-2 2 -0.002 1 -2 9 -10 imp:n=1
-3 3 -6.560 2 -3 9 -10 imp:n=1
-4 4 -0.7 3 5 -6 7 -8 9 -10 imp:n=1
-5 0 -5:6:-7:8:-9:10 imp:n=0
+1 1 -10.5216 -1 9 -10            imp:n=1 tmp=7.955e-8   $ 923 K
+2 2 -0.002    1 -2 9 -10         imp:n=1 tmp=5.370e-8   $ 623 K
+3 3 -6.560    2 -3 9 -10         imp:n=1 tmp=5.111e-8   $ 593 K
+4 4 -0.7      3 5 -6 7 -8 9 -10  imp:n=1 tmp=5.025e-8   $ 583 K
+5 0          -5:6:-7:8:-9:10     imp:n=0
 
 C     Surface Cards
 1  CZ 0.4095 $ UO2 Fuel (F)
