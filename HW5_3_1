@@ -1,0 +1,72 @@
+Task 3 Hot Operating Temp Pincell Simulation
+C     Cell Cards
+1 1 -10.5216 -1 9 -10            imp:n=1 tmp=7.955e-8   $ 923 K
+2 2 -0.002    1 -2 9 -10         imp:n=1 tmp=5.370e-8   $ 623 K
+3 3 -6.560    2 -3 9 -10         imp:n=1 tmp=5.111e-8   $ 593 K
+4 4 -0.7      3 5 -6 7 -8 9 -10  imp:n=1 tmp=5.025e-8   $ 583 K
+5 0          -5:6:-7:8:-9:10     imp:n=0
+
+C     Surface Cards
+1  CZ 0.4095 $ UO2 Fuel (F)
+2  CZ 0.4175 $ He Radial Gap (G)
+3  CZ 0.4745 $ Zircaloy-4 Clad (C)
+*5  PX  -0.627 $ Borated Water Moderator (M)
+*6  PX   0.627 $ Borated Water Moderator (M)
+*7  PY  -0.627 $ Borated Water Moderator (M)
+*8  PY   0.627 $ Borated Water Moderator (M)
+*9  PZ  -100 $ Axial Reflector
+*10  PZ   100 $ Axial Reflector
+
+C     Data Cards
+C     Material Data Cards (operating temperatures)
+c  ---- UO2, 0.711 wt% U-235 (natural), 650 C -> 900 K ----
+c  U Ai : U-235 0.007200, U-238 0.992800
+m1   92235.82c  2.400101e-03   $ U-235
+     92238.82c  3.309332e-01   $ U-238
+     8016.82c   6.666667e-01   $ O-16
+mt1 u-o2.36t o2-u.26t $ U238 and O2 in UO2, at 1000 K
+c  ---- Helium (natural) 0.002 g/ccm, 350 C -> 600 K ----
+m2   2004.81c   0.99999866   $ He-4
+     2003.81c   1.34e-6      $ He-3
+c  ---- Zircaloy-4, 6.56 g/ccm, 320 C -> 600 K ----
+c  Ai: Zr 0.98342754, Sn 0.01154367, Fe 0.00327179, Cr 0.00175699
+m3   40090.81c  5.059735e-01   $ Zr-90
+     40091.81c  1.103406e-01   $ Zr-91
+     40092.81c  1.686578e-01   $ Zr-92
+     40094.81c  1.709197e-01   $ Zr-94
+     40096.81c  2.753597e-02   $ Zr-96
+     50112.81c  1.119736e-04   $ Sn-112
+     50114.81c  7.618822e-05   $ Sn-114
+     50115.81c  3.924848e-05   $ Sn-115
+     50116.81c  1.678450e-03   $ Sn-116
+     50117.81c  8.865539e-04   $ Sn-117
+     50118.81c  2.795877e-03   $ Sn-118
+     50119.81c  9.916013e-04   $ Sn-119
+     50120.81c  3.760928e-03   $ Sn-120
+     50122.81c  5.344719e-04   $ Sn-122
+     50124.81c  6.683785e-04   $ Sn-124
+     26054.81c  1.912361e-04   $ Fe-54
+     26056.81c  3.001998e-03   $ Fe-56
+     26057.81c  6.932923e-05   $ Fe-57
+     26058.81c  9.226448e-06   $ Fe-58
+     24050.81c  7.634122e-05   $ Cr-50
+     24052.81c  1.472164e-03   $ Cr-52
+     24053.81c  1.669316e-04   $ Cr-53
+     24054.81c  4.155281e-05   $ Cr-54
+c  ---- Borated water (H2O + 1000 ppm natural B), 310 C -> 600 K ----
+m4   1001.81c   0.666667       $ H-1
+     8016.81c   0.333333       $ O-16
+mt4  lwtr.26t                  $ S(a,b) H in H2O, 600 K
+C Criticality Control Cards
+kcode 5e4 1.0 100 400 $ hist/gen; keff guess; skip gen, total gen
+C Uniform initial source
+SDEF  ERG=D1 POS=0 0 0 AXS=0 0 1 RAD=d2 EXT=D3 CEL=1
+SP1   -3 0.988 2.249 $ fission spectrum for U235 thermal
+SI2   0  0.4095
+SP2   -21  1
+SI3   -100 100
+SP3   0    1
+C Volume
+sd34  173.04   $ water volume, cm^3
+C print all tables
+print
