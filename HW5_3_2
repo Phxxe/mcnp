@@ -66,7 +66,5 @@ SI2   0  0.4095
 SP2   -21  1
 SI3   -100 100
 SP3   0    1
-C Volume
-sd34  173.04   $ water volume, cm^3
 C print all tables
 print
