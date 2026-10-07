@@ -72,11 +72,11 @@ SP3   0    1
 C Volume
 sd34  173.04   $ water volume, cm^3
 C Tallies
-f4:n   1
-f14:n  2
-f24:n  3
-f34:n  4
 e0  6.25E-7  1.0  20.0 T
 fq0  e f
+fm4   2.23e15   $ replace with P*nu/(Q*k) from your output
+fm14  2.23e15
+fm24  2.23e15
+fm34  2.23e15
 C print all tables
 print
