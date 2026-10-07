@@ -1,0 +1,82 @@
+Task 2 Hot Operating Temp Pincell Simulation
+C     Cell Cards
+1 1 -10.5216 -1 9 -10 imp:n=1
+2 2 -0.002 1 -2 9 -10 imp:n=1
+3 3 -6.560 2 -3 9 -10 imp:n=1
+4 4 -1.0 3 5 -6 7 -8 9 -10 imp:n=1
+5 0 -5:6:-7:8:-9:10 imp:n=0
+
+C     Surface Cards
+1  CZ 0.4095 $ UO2 Fuel (F)
+2  CZ 0.4175 $ He Radial Gap (G)
+3  CZ 0.4745 $ Zircaloy-4 Clad (C)
+*5  PX  -0.627 $ Borated Water Moderator (M)
+*6  PX   0.627 $ Borated Water Moderator (M)
+*7  PY  -0.627 $ Borated Water Moderator (M)
+*8  PY   0.627 $ Borated Water Moderator (M)
+*9  PZ  -100 $ Axial Reflector
+*10  PZ   100 $ Axial Reflector
+
+C     Data Cards
+C     Material Data Cards
+c  ---- UO2, 4.95 wt% U-235 ----
+c  U Ai : U-235 0.050102, U-238 0.949898
+m1   92235.80c  1.670050e-02   $ U-235
+     92238.80c  3.166328e-01   $ U-238
+     8016.80c   6.666667e-01   $ O-16
+c  ---- Helium (natural) 0.002 g/ccm ----
+m2   2004.80c   0.99999866   $ He-4
+     2003.80c   1.34e-6      $ He-3
+c  ---- Zircaloy-4 (isotopic, atom fractions) ----
+c  Ai: Zr 0.98342754, Sn 0.01154367, Fe 0.00327179, Cr 0.00175699
+c  6.56 g/ccm
+m3   40090.80c  5.059735e-01   $ Zr-90
+     40091.80c  1.103406e-01   $ Zr-91
+     40092.80c  1.686578e-01   $ Zr-92
+     40094.80c  1.709197e-01   $ Zr-94
+     40096.80c  2.753597e-02   $ Zr-96
+     50112.80c  1.119736e-04   $ Sn-112
+     50114.80c  7.618822e-05   $ Sn-114
+     50115.80c  3.924848e-05   $ Sn-115
+     50116.80c  1.678450e-03   $ Sn-116
+     50117.80c  8.865539e-04   $ Sn-117
+     50118.80c  2.795877e-03   $ Sn-118
+     50119.80c  9.916013e-04   $ Sn-119
+     50120.80c  3.760928e-03   $ Sn-120
+     50122.80c  5.344719e-04   $ Sn-122
+     50124.80c  6.683785e-04   $ Sn-124
+     26054.80c  1.912361e-04   $ Fe-54
+     26056.80c  3.001998e-03   $ Fe-56
+     26057.80c  6.932923e-05   $ Fe-57
+     26058.80c  9.226448e-06   $ Fe-58
+     24050.80c  7.634122e-05   $ Cr-50
+     24052.80c  1.472164e-03   $ Cr-52
+     24053.80c  1.669316e-04   $ Cr-53
+     24054.80c  4.155281e-05   $ Cr-54
+c  ---- Borated water (H2O + 1000 ppm natural B, by weight) ----
+c  Atom frac: water 0.999444, boron 0.000556
+m4   1001.80c   0.666296       $ H-1
+     8016.80c   0.333148       $ O-16
+     5010.80c   1.10586e-04    $ B-10
+     5011.80c   4.45121e-04    $ B-11
+mt4  lwtr.20t                  $ S(a,b) for H in H2O (ENDF/B-VII.1, 293.6 K)
+C Criticality Control Cards
+kcode 5e4 1.0 100 400 $ hist/gen; keff guess; skip gen, total gen
+C Uniform initial source
+SDEF  ERG=D1 POS=0 0 0 AXS=0 0 1 RAD=d2 EXT=D3 CEL=1
+SP1   -3 0.988 2.249 $ fission spectrum for U235 thermal
+SI2   0  0.4095
+SP2   -21  1
+SI3   -100 100
+SP3   0    1
+C Volume
+sd34  173.04   $ water volume, cm^3
+C Tallies
+f4:n   1
+f14:n  2
+f24:n  3
+f34:n  4
+e0  6.25E-7  1.0  20.0 T
+fq0  e f
+C print all tables
+print
