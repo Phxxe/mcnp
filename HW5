@@ -3,8 +3,8 @@ C     Cell Cards
 1 1 -10.5216 -1 9 -10 imp:n=1
 2 2 -0.002 1 -2 9 -10 imp:n=1
 3 3 -6.560 2 -3 9 -10 imp:n=1
-2 4 -0.002 3 5 -6 7 -8 9 -10 imp:n=1
-3 0 3 -5 6 -7 8 -9 10 imp:n=0
+4 4 -1.0 3 5 -6 7 -8 9 -10 imp:n=1
+5 0 -5:6:-7:8:-9:10 imp:n=0
 
 C     Surface Cards
 1  CZ 0.4095 $ UO2 Fuel (F)
@@ -20,7 +20,7 @@ C     Surface Cards
 C     Data Cards
 C     Material Data Cards
 c  ---- UO2, 4.95 wt% U-235 ----
-c  U Ai3 : U-235 0.050102, U-238 0.949898
+c  U Ai : U-235 0.050102, U-238 0.949898
 m1   92235.80c  1.670050e-02   $ U-235
      92238.80c  3.166328e-01   $ U-238
      8016.80c   6.666667e-01   $ O-16
@@ -61,11 +61,22 @@ m4   1001.80c   0.666296       $ H-1
      5011.80c   4.45121e-04    $ B-11
 mt4  lwtr.20t                  $ S(a,b) for H in H2O (ENDF/B-VII.1, 293.6 K)
 C Criticality Control Cards
-kcode 1e4 1.0 200 1000 $ hist/gen; keff guess; skip 20 gen, total 200 gen
-C Uniform intial source
-SDEF  ERG=D1 POS=0 0 0  RAD=d2  CEL=1
+kcode 5e4 1.0 100 400 $ hist/gen; keff guess; skip gen, total gen
+C Uniform initial source
+SDEF  ERG=D1 POS=0 0 0 AXS=0 0 1 RAD=d2 EXT=D3 CEL=1
 SP1   -3 0.988 2.249 $ fission spectrum for U235 thermal
 SI2   0  0.4095
-SP2   -21  2
+SP2   -21  1
+SI3   -100 100
+SP3   0    1
+C Volume
+sd34  173.04   $ water volume, cm^3
+C Tallies
+f4:n   1
+f14:n  2
+f24:n  3
+f34:n  4
+e0  6.25E-7  1.0  20.0 T
+fq0  e f
 C print all tables
 print
