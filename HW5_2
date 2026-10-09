@@ -78,7 +78,7 @@ f24:n  3
 f34:n  4
 e0  6.25E-7  1.0  20.0 T
 fq0  e f
-fm4   2.23e15   $ replace with P*nu/(Q*k) from your output
+fm4   2.23e15   
 fm14  2.23e15
 fm24  2.23e15
 fm34  2.23e15
